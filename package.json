@@ -1,0 +1,20 @@
+{
+  "name": "hexo-theme-magabold",
+  "version": "1.0.0",
+  "description": "A magazine theme with bold colors (for Hexo).",
+  "author": "GinoZhang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sclass53/hexo-theme-megabold"
+  },
+  "license": "MIT",
+  "private": true,
+  "homepage": "https://github.com/sclass53/hexo-theme-megabold",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "load-grunt-tasks": "~0.2.0",
+    "grunt-git": "~0.2.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1"
+  }
+}

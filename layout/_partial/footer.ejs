@@ -1,0 +1,49 @@
+<footer id="footer" class="site-footer">
+  <% if (theme.sidebar === 'bottom'){ %>
+    <%- partial('_partial/sidebar') %>
+  <% } %>
+
+  <div class="clearfix container">
+      <div class="site-info">
+	      &copy; <%= date(new Date(), 'YYYY') %> <%= config.title || config.author %> All Rights Reserved.
+          <% if (theme.busuanzi_analytics){ %>
+            <span id="busuanzi_container_site_uv">
+              本站访客数<span id="busuanzi_value_site_uv"></span>人次  
+              本站总访问量<span id="busuanzi_value_site_pv"></span>次
+            </span>
+          <% } %>
+      </div>
+      <div class="site-credit">
+        <%= __('theme_by') %> <a href="#" target="_blank">MegaBolD</a>
+      </div>
+      <br>
+      <% if(theme.menu_bottom_enable == true) { %>
+      <table class="menu-footer" style="width: <%= theme.menu_bottom_width %>;">
+        <thead>
+          <tr>
+            <% theme.menu_bottom.forEach(function(submenu){ %>
+              <td><b><%= submenu._title %></b><br>
+                <% submenu.children.forEach(function(obj){ %>
+                  <a href="<%= obj.lnk %>"><%= obj._ %></a>
+                  <br>
+                <% }); %>
+              </td>
+            <% }); %>
+          </tr>
+        </thead>
+      </table>
+      <% } %>
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var contentdiv = document.getElementById("content");
+
+    contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("allheader").offsetHeight - document.getElementById("footer").offsetHeight + "px";
+</script>
+
+<!-- Custome JS -->
+<%- js('js/my.js') %>

@@ -1,0 +1,73 @@
+<% if (pagination == 2){ %>
+  <% var pip=0; %>
+  <% if(theme.most_recent) { %>
+  <% page.posts.each(function(post){ %>
+    <% pip=pip+1 %>
+    <% if(pip==1) { %>
+      <!--hr style="border: 3px solid red;background: red;width: 50%;border-radius: 10px;position:relative;left: 0px;margin: 10px 0;"-->
+      <div style="width: 90%;height: 430px;position:relative;overflow:hidden;" class="slider">
+        <% if(post.photos != ""){ %>
+          <image src="<%= post.photos[0] %>" class="cover-image-show" />
+        <% } else { %>
+          <image src="/preview/news.jpeg" class="cover-image-show" />
+        <% } %>
+        <a href="<%= url_for(post.path) %>" class="post-title-recent">
+          <%- post.title %> <br>
+          <b class="datetime recent"><%= date(post.date, 'MMMM D, YYYY') %></b></span></div>
+        </a>
+      <% if(theme.top_news){ %><h2 class="class-name"><%= __("top") %></h2><% } %>
+      <% if(theme.top_news==false){ %><h2 class="class-name"><%= __("all_posts") %></h2><% } %>
+    <% } else if(post.top==true){ %>
+      <% if(theme.top_news) { %>
+      <%- partial('article-top', {post: post, index: true}) %>
+      <% } %>
+    <% } %>
+  <% }); %>
+  <% } else { %>
+    <% if(theme.top_news){ %><h2 class="class-name"><%= __("top") %></h2><% } %>
+    <% page.posts.each(function(post){ %>
+      <% if(post.top==true){ %>
+        <% if(theme.top_news) { %>
+        <%- partial('article-top', {post: post, index: true}) %>
+        <% } %>
+      <% } %>
+    <% }); %>
+  <% } %>
+  <% if(theme.top_news){ %><h2 class="class-name"><%= __("all_posts") %></h2><% } %>
+  <% page.posts.limit(6).each(function(post){ %>
+    <%- partial('article', {post: post, index: true}) %>
+  <% }) %>
+  <a href="/archives/" class="pointer"><%= __("see_all") %></a>
+<% } else { %>
+  <% if (is_archive()){ %>
+    <div class="archives-tags-wrap"><blockquote><span><%= __('post_total_count', site.posts.length) %></span></blockquote>
+  <% } %>
+  <% var last; %>
+  <% page.posts.each(function(post, i){ %>
+    <% var year = post.date.year();p=p+1;%>
+    <% if (last != year){ %>
+      <% if (last != null){ %>
+        </div></section>
+      <% } %>
+      <% last = year; %>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <h1><a href="<%- url_for(config.archive_dir + '/' + year) %>" class="archive-year"><%= year %></a></h1>
+        </div>
+        <div class="archives">
+    <% } %>
+    <%- partial('archive-post', {post: post, even: i % 2 == 0}) %>
+  <% }) %>
+  <% if (page.posts.length){ %>
+    </div></section>
+  <% } %>
+<% } %>
+<% if (page.total > 1){ %>
+  <nav id="page-nav">
+    <% var prev_text = __('prev');var next_text = __('next')%>
+    <%- paginator({
+      prev_text: prev_text,
+      next_text: next_text
+    }) %>
+  </nav>
+<% } %>

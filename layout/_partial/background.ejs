@@ -1,0 +1,7 @@
+<% if(theme.background.enable) { %>
+    <% if(theme.background.image == "NEST") { %>
+        <script type="text/javascript" size="150" alpha="0.6" zindex="-1" src="/js/ribbon-refresh.min.js" async="async"></script>
+    <% } else { %>
+        <div class="bgimage" style="background-image: url(<%= theme.background.image %>);"></div>
+    <% } %>
+<% } %>

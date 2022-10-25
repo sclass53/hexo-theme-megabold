@@ -1,0 +1,40 @@
+home: Inicio
+archives: Archivos
+about: Acerca de
+categories: Categorías
+search: Buscar
+tags: Tags
+tagcloud: Nube de Tags
+tweets: Tweets
+prev: Anterior
+next: Siguiente
+comment: Comentarios
+archive_a: Archivos
+archive_b: "Archivos: %s"
+page: Página %d
+recent_posts: Posts recientes
+newer: Nuevo
+older: Anterior
+share: Compartir
+powered_by: Construido por
+rss_feed: RSS
+category: Categoría
+tag: Tag
+connect: 'Conectate con nosotros'
+post_total_count: Hay %d publicaciones en total hasta ahora.
+read_more: Continuar leyendo →
+contents: Contenido
+none: Ninguno
+posted_on: Publicado en
+donation:
+    button_text: 'Donar'
+insight:
+    hint: 'Escribe algo...'
+    posts: 'Publicaciones'
+    pages: 'Páginas'
+    categories: 'Categorias'
+    tags: 'Tags'
+    untitled: '(Sin titulo)'
+all_posts: "Todas las posiciones"
+see_all: "Todos ven ➡"
+top: "Noticias principales"

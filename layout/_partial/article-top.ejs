@@ -1,0 +1,92 @@
+<article id="<%= post.layout %>-<%= post.slug %>" style="overflow: hidden;margin: 10px 10px;display: inline-block;background: transparent;" class="article article-type-<%= post.layout %> top" itemscope itemprop="blogPost" >
+    <div id="articleInner" class="clearfix post-1016 post type-post status-publish format-standard has-post-thumbnail hentry category-template-2 category-uncategorized tag-codex tag-edge-case tag-featured-image tag-image tag-template">
+      <%- partial('post/gallery') %>
+      
+      <div class="article-entry" itemprop="articleBody">
+        <% var exc;if(post.excerpt!=""){exc=excerpt;}else{exc=post.content;} %>
+        <% if (index){ %>
+          <% if (post.photos != ""){ %>
+            <div class="entry-thumbnail" style="width: 95%">
+              <a href="<%- url_for(post.path) %>"><img width="300" height="250" src="<%= post.photos[0] %>" class="attachment-thumb-featured size-thumb-featured wp-post-image top" alt=""></a>
+            </div>
+            <!--div class="entry-summary"-->
+            <!--%- truncate(strip_html(post.content), {length: 200, omission: '...'}) %-->
+  
+          <% } else { %>
+  
+            <% if (theme.random_thumb){ %>
+              <div class="entry-thumbnail" style="width: 95%">
+                <a href="<%- url_for(post.path) %>"><img width="250" height="175" src="/medias/feature/<%- Math.ceil(Math.random() * 23) %>.jpg" class="attachment-thumb-featured size-thumb-featured wp-post-image top" alt=""></a>
+              </div>
+              <br>
+              <!--div class="entry-summary"-->
+            <% } else { %>
+              <br>
+              <!--div class="entry-summary" style="margin-left:0;"-->
+            <% } %>
+  
+          <% } %>
+            <p class="article-more-link">
+              <!--a href="<%- url_for(post.path) %>#more"><%= __('read_more') %></a-->
+            </p>
+          <!--/div-->
+        <% } else { %>
+          <%- exc %>
+        <% } %>
+      </div>
+      <% if (post.link || post.title){ %>
+        <% if(post.excerpt && index){ %>
+          <header class="article-header" style="text-align:center;">
+            <%- partial('post/title', {class_name: 'article-title'}) %>
+          </header>
+        <% } else { %>
+          <header class="article-header m-page">
+            <%- partial('post/title', {class_name: 'article-title'}) %>
+          </header>
+        <% } %>
+      <% } %>
+      <% if(post.excerpt && index){ %>
+        <div class="article-meta" style="text-align: center!important;">
+          <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+          <%- partial('post/busuanzi-analytics',{index: index}) %>
+        </div>
+      <% } else { %>
+        <div class="article-meta m-page">
+          <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>
+          <%- partial('post/busuanzi-analytics',{index: index}) %>
+        </div>
+      <% } %>
+      <footer class="entry-meta entry-footer">
+        <%- partial('post/category') %>
+        <%- partial('post/tag') %>
+        <% if (!index && theme.donate.enable){ %>
+          <%- partial('donate') %>
+        <% } %>
+              
+        <% if (!index && post.comments && (theme.gentie_productKey || theme.duoshuo_shortname || theme.disqus_shortname || theme.uyan_uid || theme.wumii || theme.livere_shortname || theme.gitment.owner)){ %>
+          <%- partial('comment') %>
+        <% } %>
+      </footer>
+    </div>
+    <% if (!index){ %>
+      <%- partial('post/nav') %>
+    <% } %>
+  </article>
+  
+  <!-- Table of Contents -->
+  <% if (!index && is_post() && theme.post_catalog.enable){ %>
+    <aside id="sidebar">
+      <div id="toc" class="toc-article" style="overflow-y: scroll; max-width: 28%;">
+      <strong class="toc-title"><%= __('contents') %></strong>
+      <% if (toc(post.content) != ""){ %>
+        <%- toc(post.content, { "class": "nav" }) %>
+      <% } else { %>
+        <ol class="nav"><%= __('none') %></ol>
+      <% } %>
+      </div>
+    </aside>
+  <% } else { %>
+      <% if (!index && is_post() && theme.post_sidebar.enable){ %>
+        <%- partial('_partial/sidebar', null, {cache: !config.relative_link}) %>
+      <% } %>
+  <% } %>

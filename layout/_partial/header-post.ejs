@@ -1,0 +1,76 @@
+<header id="allheader" class="site-header" role="banner">
+  <div class="clearfix container">
+      <div class="site-branding">
+
+          <h1 class="site-title">
+            <% if (theme.avatar.enable){ %>
+              <a href="<%= config.root %>" rel="home" >
+                <img style="margin-bottom: <%= theme.avatar.bottom %>px;"  width="<%= theme.avatar.width %>px" height="<%= theme.avatar.height %>px" alt="Hike News" src="<% if (!(theme.avatar.url.startsWith('http') || theme.avatar.url.indexOf('://') >= 0)){ %> <%-config.root %><% } %><%- theme.avatar.url %>">
+              </a>
+            <% } else { %>
+              <a href="<%= config.root %>" title="<%= config.title %>" rel="home"> <%= config.title %> </a>
+            <% } %>
+          </h1>
+
+          <% if (config.description){ %>
+            <div class="site-description"><%= config.description %></div>
+          <% } %>
+      </div>
+      <% if(theme.adsense.enable) { %>
+      <div id="ads-r" style="float: right;width: 64%;height: 90px!important;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=<%= theme.adsense.id %>"
+            crossorigin="anonymous"></script>
+        <!-- banner -->
+        <ins class="adsbygoogle"
+            style="display:inline-block;width: 100%;height:90px"
+            data-ad-client="<%= theme.adsense.id %>"
+            data-ad-slot="4541467627"></ins>
+        <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      <% } %>
+      <nav id="main-navigation" class="main-navigation" role="navigation">
+        <a class="nav-open">Menu</a>
+        <a class="nav-close">Close</a>
+        <div class="clearfix sf-menu">
+
+          <ul id="main-nav" class="nmenu sf-js-enabled">
+                <% for (var i in theme.menu){ %>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663"> <a class="" href="<%- url_for(theme.menu[i]) %>"><%= __(i.toLowerCase()) %></a> </li>
+                <% } %>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1663" style="float: right;"><%- partial("search/button") %></li>
+          </ul>
+        </div>
+      </nav>
+  </div>
+</header>
+
+<% if (theme.about_big_image){ %>
+  <div id="originBgDiv" style="background: #fff; width: 100%;">
+
+      <div style="max-height:600px; overflow: hidden;  display: flex; display: -webkit-flex; align-items: center;">
+        <img id="originBg" width="100%" alt="" src="">
+      </div>
+
+  </div>
+
+  <script>
+  function setAboutIMG(){
+      var imgUrls = "<%- theme.about_big_image %>".split(",");
+      var random = Math.floor((Math.random() * imgUrls.length ));
+      if (imgUrls[random].startsWith('http') || imgUrls[random].indexOf('://') >= 0) {
+        document.getElementById("originBg").src=imgUrls[random];
+      } else {
+        document.getElementById("originBg").src='<%= config.root %>' + imgUrls[random];
+      }
+  }
+  bgDiv=document.getElementById("originBgDiv");
+  if(location.pathname.match('about')){
+    setAboutIMG();
+    bgDiv.style.display='block';
+  }else{
+    bgDiv.style.display='none';
+  }
+  </script>
+<% } %>

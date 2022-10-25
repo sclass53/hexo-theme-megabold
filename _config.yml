@@ -1,0 +1,215 @@
+# ---------------------------------------------------------------
+# Site Information Settings
+#$ note: config settings in "*" means its a demo
+# ---------------------------------------------------------------
+
+# Header Menu
+menu:
+  Home: /
+  Archives: archives
+  Categories: categories
+  Tags: tags
+  About: about
+  Contact: contact
+rss: /atom.xml
+
+since: 2013
+
+# Set default keywords (Use a comma to separate)
+keywords: ""
+
+## Show most recent post
+most_recent: true
+## Show top news
+top_news: true
+
+# Put your favicon.ico into `hexo-site/themes/megabold/source/` directory.
+favicon: css/images/favicon.ico
+
+
+# Put your avatar.jpg into `hexo-site/themes/megabold/source/` directory.
+# url is target link (E.g. `url: https://hexo.io/logo.svg` or `url: css/images/mylogo.jpg`)
+avatar: 
+  enable: false
+  width: 124
+  height: 124
+  bottom: 10
+  url: https://hexo.io/logo.svg
+  
+
+# AboutPage background
+about_big_image: [css/images/pose.jpg, https://source.unsplash.com/collection/954550/1920x1080]
+
+# Homepage bg
+#-# Set image to "NEST" if you want to use the geometrical nest background
+background:
+  enable: True
+  image: NEST
+
+# Show breaking news bar on top
+breaking_news: true
+breaking_news_content: "\
+Hello! This is my news website!"
+
+# Homepage post-image
+## True if auto-generate images for posts without covers
+random_thumb: true
+
+
+# Post Article's Content
+post_catalog:
+  enable: true
+
+# Sidebar like in homepage, is necessary to disable [post_catalog]
+post_sidebar:
+  enable: false
+
+# Content
+fancybox: true
+
+
+# Sidebar
+sidebar: right
+# widgets-list: recent_posts,social,category,ads,tag,tagcloud,archive,search
+widgets:
+- recent_posts
+- social
+- category
+- tag
+- tagcloud
+- archive
+
+# Social Links
+# Key is the name of FontAwsome icon.
+# Value is the target link (E.g. GitHub: https://github.com/sclass53)
+social:
+  Github: https://github.com/sclass53
+  Weibo: http://www.yoursite.com
+  email: somebodynoname06166@gmail.com
+  rss: /atom.xml
+
+# Search
+search:
+    insight: true # you need to install `hexo-generator-json-content` before using Insight Search
+    swiftype: # enter swiftype install key here
+    baidu: false # you need to disable other search engines to use Baidu search, options: true, false
+
+
+# comment ShortName, you can choose only ONE to display.
+gentie_productKey: #your-gentie-product-key
+duoshuo_shortname:
+disqus_shortname: 
+livere_shortname:
+uyan_uid: 
+wumii:
+gitment:
+  owner:                   #Your GitHub ID
+  repo:                    #The repo to store comments
+  client_id:               #Your client ID
+  client_secret:           #Your client secret
+valine:
+  appid: #Leancloud应用app_id，必填
+  appkey: #Leancloud应用app_key，必填
+  notify: false
+  verify: false
+  placeholder: ヾﾉ≧∀≦)o快来评论一下吧!
+  avatar: 
+  pageSize: 10
+  visitor: true
+
+# Code Highlight theme
+# Available value:
+#    default | normal | night | night eighties | night blue | night bright
+# https://github.com/chriskempson/tomorrow-theme
+highlight_theme: default
+
+
+
+# widget behavior
+archive_type: 'monthly'
+show_count: true
+
+# Google Webmaster tools verification setting
+# See: https://www.google.com/webmasters/
+google_site_verification:
+baidu_site_verification:
+qihu_site_verification:
+
+# Miscellaneous
+google_analytics:
+gauges_analytics:
+baidu_analytics:
+tencent_analytics:
+busuanzi_analytics: true
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
+
+# Facebook SDK Support.
+# https://github.com/iissnan/hexo-theme-next/pull/410
+facebook_sdk:
+  enable: false
+  app_id:       #<app_id>
+  fb_admin:     #<user_id>
+  like_button:  #true
+  webmaster:    #true
+
+# CNZZ count
+cnzz_siteid: 1260716016
+
+# donation button
+donate:
+    enable: true
+    message: '如果觉得我的文章对您有用，请随意打赏。您的支持将鼓励我继续创作!'
+    wechatImage: 
+    alipayImage: 
+
+# Automatic page load progress bar by PACE.js
+progressBar:
+  enable: true #switch
+  themeCSS: https://github.com/HubSpot/pace/raw/master/themes/orange/pace-theme-flash.css    #PATH to PACE theme CSS, support relative / absolute path
+
+#---------------------------------------------
+# DEMO properties
+#---------------------------------------------
+
+# BOTTOM MENU
+# * display menu at the bottom of index pages (pagination == 2)
+## *  only supports double layer
+menu_bottom_width: 200px
+menu_bottom_enable: true
+menu_bottom:
+  - Links:
+    _title: Links 
+    children:
+      - Home: 
+        _: Home
+        lnk:
+
+      - About: 
+        _: About
+        lnk: /about/
+
+  - Commerce:
+    _title: Commercial
+    children:
+      - Shop: 
+        _: Online Shop
+        lnk: /shop/
+
+      - Blog: 
+        _: Blog
+        lnk: /blog/
+
+
+# Google Adsense
+## header
+adsense:
+  enable: True
+  id: ca-pub-7436530442292220
+
+## sidebar
+### please config the ads widget position in the "sidebar"
+ads_side:
+  id: ca-pub-7436530442292220
