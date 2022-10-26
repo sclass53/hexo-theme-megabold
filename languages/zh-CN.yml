@@ -34,3 +34,6 @@ insight:
     categories: '分类'
     tags: '标签'
     untitled: '(无标题)'
+all_posts: "全部文章"
+see_all: "查看全部 ➡"
+top: "今日头条"
