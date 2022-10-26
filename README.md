@@ -156,8 +156,8 @@ disqus_shortname:
 ```
 
 ## Features: Beta
-!!!note hahaha
-  All Beta features are in test!!!
+>NOTE
+ All Beta features are in test!!!
 including:
 
 ### Bottom link table
