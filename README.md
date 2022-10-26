@@ -7,6 +7,8 @@ MegaBolD is a powerful magazine theme for your [Hexo] site.
 
 [**☞ Live Preview**](https://sclass53.github.io/megabold/)
 
+![](https://sclass53.github.io/resources/megabold-preview.png)
+
 <!--more-->
 
 ## Installation
