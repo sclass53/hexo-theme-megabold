@@ -5,7 +5,7 @@ Only the mega-bold things can catch the people's attention.
 
 MegaBolD is a powerful magazine theme for your [Hexo] site.
 
-[**☞ Live Preview**](https://sclass53.github.io/megabold/)
+[**☞ Live Preview**](https://megabold.sclass53.jnrcs.org/)
 
 ![](https://sclass53.github.io/resources/megabold-shot.png)
 
