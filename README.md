@@ -156,7 +156,9 @@ disqus_shortname:
 ```
 
 ## Features: Beta
-All Beta features are in test, including:
+!!!note hahaha
+  All Beta features are in test!!!
+including:
 
 ### Bottom link table
 config the `children:` in the _config.yml to setup the table
