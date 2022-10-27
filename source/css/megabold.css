@@ -1379,3 +1379,6 @@ ul li.clearfix.recent{
 #rocket{
 	background: url("/medias/rocket.png")!important;
 }
+.site-header a{
+	font-family: Microsoft Yahei Light;
+}
