@@ -1,7 +1,7 @@
 # MegaBolD
 Only the mega-bold things can catch the people's attention.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/sclass53/hexo-theme-megabold/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/badge/license-GNU%20public-blue.svg)](https://github.com/sclass53/hexo-theme-megabold/blob/master/LICENSE)
 
 MegaBolD is a powerful magazine theme for your [Hexo] site.
 
